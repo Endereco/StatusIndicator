@@ -1,0 +1,22 @@
+{
+  "name": "@endereco/statusindicator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "StatusIndicator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Endereco/StatusIndicator.git"
+  },
+  "keywords": [
+    "endereco"
+  ],
+  "author": "ilja_weber <ilja@endereco.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Endereco/StatusIndicator/issues"
+  },
+  "homepage": "https://github.com/Endereco/StatusIndicator#readme"
+}

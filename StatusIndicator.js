@@ -8,6 +8,18 @@
 function StatusIndicator(config) {
     var $self  = this;
 
+    /**
+     * Combine object, IE 11 compatible.
+     */
+    this.mergeObjects = function(objects) {
+        return objects.reduce(function (r, o) {
+            Object.keys(o).forEach(function (k) {
+                r[k] = o[k];
+            });
+            return r;
+        }, {})
+    };
+
     this.statusIconElement = undefined;
     this.renderTimeout = undefined;
 
@@ -17,7 +29,7 @@ function StatusIndicator(config) {
     };
     this.fieldsAreSet = false;
     this.dirty = false;
-    this.config = Object.assign(this.defaultConfig, config);
+    this.config = $self.mergeObjects([this.defaultConfig, config]);
 
 
     this.init = function() {
@@ -164,7 +176,7 @@ function StatusIndicator(config) {
      * @param newConfig
      */
     this.updateConfig = function(newConfig) {
-        $self.config = Object.assign($self.config, newConfig);
+        $self.config = $self.mergeObjects([$self.config, newConfig]);
     };
 
     /**
